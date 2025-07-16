@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mng.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <title>مانجا سبارك - Manga Spark</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo" onclick="showPage('home')">مانجا بارسو</a>
+
+                <div class="header-controls">
+                    <button class="theme-toggle" onclick="toggleTheme()">
+                        <i id="theme-icon" class="fas fa-moon"></i>
+                    </button>
+                    <button class="lang-toggle" onclick="toggleLanguage()">
+                        <span id="lang-text">FR</span>
+                    </button>
+                </div>
+
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="#" onclick="showPage('home')">الرئيسية</a></li>
+                        <li><a href="#" onclick="showPage('browse')">تصفح</a></li>
+                        <li><a href="#" onclick="showPage('login')">تسجيل الدخول</a></li>
+                        <li><a href="#" onclick="showPage('popular')">قائمة المانجا</a></li>
+                        <li><a href="#" onclick="showPage('latest')">آخر التحديثات</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Homepage -->
+    <div id="home" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>مرحباً بك في مانجا بارسو</h1>
+                <p>اكتشف أفضل المانجا والمانهوا مع ترجمة عربية عالية الجودة</p>
+                <div class="search-bar">
+                    <input type="text" placeholder="ابحث عن مانجا أو مانهوا...">
+                    <button class="search-btn">بحث</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Latest Chapters -->
+            <section class="section">
+                <h2 class="section-title">آخر الفصول</h2>
+                <div class="cards-grid">
+                    <div class="manga-card" onclick="showMangaDetails('attack-titan')">
+                        <img src="https://m.media-amazon.com/images/M/MV5BZjliODY5MzQtMmViZC00MTZmLWFhMWMtMjMwM2I3OGY1MTRiXkEyXkFqcGc@._V1_.jpg"
+                            alt="هجوم العمالقة">
+                        <div class="card-info">
+                            <div class="card-title">هجوم العمالقة</div>
+                            <div class="card-meta">الفصل 139</div>
+                        </div>
+                        <div class="card-overlay">
+                            <div class="overlay-content">
+                                <div class="card-title">هجوم العمالقة</div>
+                                <div class="card-meta">الفصل الأخير - مكتمل</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="manga-card" onclick="showMangaDetails('one-piece')">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/9/90/One_Piece%2C_Volume_61_Cover_%28Japanese%29.jpg"
+                            alt="ون بيس">
+                        <div class="card-info">
+                            <div class="card-title">ون بيس</div>
+                            <div class="card-meta">الفصل 1098</div>
+                        </div>
+                        <div class="card-overlay">
+                            <div class="overlay-content">
+                                <div class="card-title">ون بيس</div>
+                                <div class="card-meta">مستمر - أسبوعي</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="manga-card" onclick="showMangaDetails('solo-leveling')">
+                        <img src="https://images.epagine.fr/559/9782382882559_1_75.jpg" alt="سولو ليفلنج">
+                        <div class="card-info">
+                            <div class="card-title">سولو ليفلنج</div>
+                            <div class="card-meta">الفصل 179</div>
+                        </div>
+                        <div class="card-overlay">
+                            <div class="overlay-content">
+                                <div class="card-title">سولو ليفلنج</div>
+                                <div class="card-meta">مكتمل - مانهوا</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="manga-card" onclick="showMangaDetails('demon-slayer')">
+                        <img src="https://asia.sega.com/kimetsu_hinokami2/assets/img/top/kv.jpg" alt="قاتل الشياطين">
+                        <div class="card-info">
+                            <div class="card-title">قاتل الشياطين</div>
+                            <div class="card-meta">الفصل 205</div>
+                        </div>
+                        <div class="card-overlay">
+                            <div class="overlay-content">
+                                <div class="card-title">قاتل الشياطين</div>
+                                <div class="card-meta">مكتمل - شونين</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Popular Manga -->
+            <section class="section">
+                <h2 class="section-title">الأكثر شعبية</h2>
+                <div class="cards-grid">
+                    <div class="manga-card" onclick="showMangaDetails('naruto')">
+                        <img src="https://www.shoshosein.com/sites/default/files/fiches/animes/naruto/naruto.jpg"
+                            alt="ناروتو">
+                        <div class="card-info">
+                            <div class="card-title">ناروتو</div>
+                            <div class="card-meta">700 فصل</div>
+                        </div>
+                        <div class="card-overlay">
+                            <div class="overlay-content">
+                                <div class="card-title">ناروتو</div>
+                                <div class="card-meta">مكتمل - كلاسيكي</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="manga-card" onclick="showMangaDetails('bleach')">
+                        <img src="https://m.media-amazon.com/images/M/MV5BMjgyM2QzMjAtOGZjOS00OGFkLTkxZGYtMDJjZGM5MzIzYmM3XkEyXkFqcGc@._V1_.jpg"
+                            alt="بليتش">
+                        <div class="card-info">
+                            <div class="card-title">بليتش</div>
+                            <div class="card-meta">686 فصل</div>
+                        </div>
+                        <div class="card-overlay">
+                            <div class="overlay-content">
+                                <div class="card-title">بليتش</div>
+                                <div class="card-meta">مكتمل - شونين</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="manga-card" onclick="showMangaDetails('dragon-ball')">
+                        <img src="https://m.media-amazon.com/images/M/MV5BNmFiM2FkYTYtY2FiOS00ZWJkLTkyOTgtNmFmODI4NjcwNDgzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+                            alt="دراغون بول">
+                        <div class="card-info">
+                            <div class="card-title">دراغون بول</div>
+                            <div class="card-meta">519 فصل</div>
+                        </div>
+                        <div class="card-overlay">
+                            <div class="overlay-content">
+                                <div class="card-title">دراغون بول</div>
+                                <div class="card-meta">مكتمل - شونين</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="manga-card" onclick="showMangaDetails('tower-god')">
+                        <img src="https://fr.web.img6.acsta.net/img/52/f6/52f64023275c9ea6907e211e195fc8b4.jpg"
+                            alt="برج الإله">
+                        <div class="card-info">
+                            <div class="card-title">برج الإله</div>
+                            <div class="card-meta">الفصل 595</div>
+                        </div>
+                        <div class="card-overlay">
+                            <div class="overlay-content">
+                                <div class="card-title">برج الإله</div>
+                                <div class="card-meta">مستمر - مانهوا</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Manga Details Page -->
+    <div id="manga-details" class="page">
+        <div class="container">
+            <div class="manga-details">
+                <div>
+                    <img id="manga-cover" src="" alt="" class="manga-cover">
+                </div>
+                <div class="manga-info">
+                    <h1 id="manga-title"></h1>
+                    <div class="manga-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">المؤلف:</span>
+                            <span id="manga-author"></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">الحالة:</span>
+                            <span id="manga-status"></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">الأجناس:</span>
+                            <div id="manga-genres" class="genres"></div>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">التقييم:</span>
+                            <span id="manga-rating"></span>
+                        </div>
+                    </div>
+                    <div class="manga-description">
+                        <h3>الوصف:</h3>
+                        <p id="manga-desc"></p>
+                    </div>
+                </div>
+            </div>
+
+            <section class="section">
+                <h2 class="section-title">قائمة الفصول</h2>
+                <div id="chapter-list" class="chapter-list"></div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Reader Page -->
+    <div id="reader" class="page">
+        <div class="reader-container">
+            <div class="reader-controls">
+                <div class="reader-info">
+                    <h3 id="reader-title"></h3>
+                    <span id="reader-chapter"></span>
+                </div>
+                <div class="reader-nav">
+                    <button class="nav-btn" id="prev-chapter" onclick="previousChapter()">الفصل السابق</button>
+                    <button class="nav-btn" onclick="showPage('manga-details')">العودة للمانجا</button>
+                    <button class="nav-btn" id="next-chapter" onclick="nextChapter()">الفصل التالي</button>
+                </div>
+            </div>
+            <div id="chapter-pages" class="chapter-pages"></div>
+        </div>
+    </div>
+
+    <!-- Browse Page -->
+    <div id="browse" class="page">
+        <div class="container">
+            <h2 class="section-title">تصفح المانجا</h2>
+
+            <div class="filter-section">
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <label>الجنس:</label>
+                        <select id="genre-filter">
+                            <option value="">جميع الأجناس</option>
+                            <option value="action">أكشن</option>
+                            <option value="adventure">مغامرة</option>
+                            <option value="comedy">كوميدي</option>
+                            <option value="drama">دراما</option>
+                            <option value="fantasy">خيال</option>
+                            <option value="romance">رومانسي</option>
+                            <option value="horror">رعب</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>الحالة:</label>
+                        <select id="status-filter">
+                            <option value="">جميع الحالات</option>
+                            <option value="ongoing">مستمر</option>
+                            <option value="completed">مكتمل</option>
+                            <option value="hiatus">متوقف</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>النوع:</label>
+                        <select id="type-filter">
+                            <option value="">جميع الأنواع</option>
+                            <option value="manga">مانجا</option>
+                            <option value="manhwa">مانهوا</option>
+                            <option value="manhua">مانها</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div id="browse-results" class="cards-grid">
+                <!-- Results will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+<div id="login" class="page">
+  <div class="container" style="max-width: 400px; padding: 2rem;">
+    <h2 class="section-title" style="text-align: center; margin-bottom: 1.5rem;">تسجيل الدخول</h2>
+    <form id="login-form">
+      <div style="margin-bottom: 1rem;">
+        <label for="email" style="display:block; margin-bottom: 0.5rem;">البريد الإلكتروني</label>
+        <input type="email" id="email" name="email" required style="width: 100%; padding: 0.5rem; border-radius: 5px; border: 1px solid var(--border);">
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <label for="password" style="display:block; margin-bottom: 0.5rem;">كلمة السر</label>
+        <input type="password" id="password" name="password" required minlength="6" style="width: 100%; padding: 0.5rem; border-radius: 5px; border: 1px solid var(--border);">
+      </div>
+      <button type="submit" style="width: 100%; padding: 0.75rem; border: none; border-radius: 25px; background-color: var(--accent); color: white; font-size: 1rem; cursor: pointer;">دخول</button>
+    </form>
+    <p id="login-error" style="color: #e74c3c; margin-top: 1rem; display: none; text-align: center;"></p>
+  </div>
+</div>
+
+<script src="prs.js"></script>
+
+</body>
+</html>
