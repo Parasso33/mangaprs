@@ -37,6 +37,21 @@ const mangaData = {
             { number: 1095, title: 'عالم صالح للعيش', pages: 16 }
         ]
     },
+    'blue-lock': {
+        title: 'Blue Lock',
+        titleEn: 'Blue Lock',
+        author: 'Muneyuki Kaneshiro',
+        status: 'مستمر',
+        genres: ['رياضي', 'شونين', 'تشويق'],
+        rating: '8.5/10',
+        description: 'بعد خروج اليابان من كأس العالم، تبدأ الحكومة مشروعاً ثورياً للعثور على أعظم مهاجم أناني: "Blue Lock".',
+        cover: 'https://m.media-amazon.com/images/I/81BaRr7Ay7L.jpg',
+        chapters: [
+            { number: 270, title: 'إصرار إيساجي', pages: 18 },
+            { number: 269, title: 'المواجهة الكبرى', pages: 19 },
+            { number: 268, title: 'الهدف الحاسم', pages: 17 }
+        ]
+    },
     'solo-leveling': {
         title: 'سولو ليفلنج',
         titleEn: 'Solo Leveling',
@@ -51,6 +66,22 @@ const mangaData = {
             { number: 178, title: 'المعركة الأخيرة', pages: 21 },
             { number: 177, title: 'الملك الظل', pages: 19 },
             { number: 176, title: 'القوة الحقيقية', pages: 20 }
+        ]
+    },
+    
+    'hunter-x-hunter': {
+        title: 'Hunter x Hunter',
+        titleEn: 'Hunter x Hunter',
+        author: 'Yoshihiro Togashi',
+        status: 'غير مكتمل',
+        genres: ['مغامرة', 'أكشن', 'خيال'],
+        rating: '9.0/10',
+        description: 'غون فريكس، فتى صغير، يسعى ليصبح صياداً محترفاً ويبحث عن والده المفقود.',
+        cover: 'https://m.media-amazon.com/images/I/81nHChjFoqL.jpg',
+        chapters: [
+            { number: 400, title: 'النهاية المؤقتة', pages: 20 },
+            { number: 399, title: 'حرب العشائر', pages: 19 },
+            { number: 398, title: 'الظل المزدوج', pages: 18 }
         ]
     }
 };

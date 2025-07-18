@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="mng.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://kit.fontawesome.com/f6775d1129.js" crossorigin="anonymous"></script>
     <title>مانجا سبارك - Manga Spark</title>
 </head>
 
@@ -38,19 +39,6 @@
             </div>
         </div>
     </header>
-
-    <button class="hamburger" onclick="toggleMobileMenu()">
-        <i class="fas fa-bars"></i>
-    </button>
-    <nav class="mobile-nav" id="mobileNav">
-        <ul>
-            <li><a href="#" onclick="showPage('home'); toggleMobileMenu()">الرئيسية</a></li>
-            <li><a href="#" onclick="showPage('browse'); toggleMobileMenu()">تصفح</a></li>
-            <li><a href="#" onclick="showPage('login'); toggleMobileMenu()">تسجيل الدخول</a></li>
-            <li><a href="#" onclick="showPage('popular'); toggleMobileMenu()">قائمة المانجا</a></li>
-            <li><a href="#" onclick="showPage('latest'); toggleMobileMenu()">آخر التحديثات</a></li>
-        </ul>
-    </nav>
 
     <!-- Homepage -->
     <div id="home" class="page active">
@@ -128,6 +116,22 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="manga-card" onclick="showMangaDetails('blue-lock')">
+                        <img src="https://images.epagine.fr/254/9782811650254_1_75.jpg"
+                            alt="Blue Lock">
+                        <div class="card-info">
+                            <div class="card-title">Blue Lock</div>
+                            <div class="card-meta">270 فصل</div>
+                        </div>
+                        <div class="card-overlay">
+                            <div class="overlay-content">
+                                <div class="card-title">Blue Lock</div>
+                                <div class="card-meta">مستمر - رياضة</div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </section>
 
@@ -149,6 +153,22 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="manga-card" onclick="showMangaDetails('hunter-x-hunter')">
+                        <img src="https://www.arcsystemworks.fr/wp-content/uploads/2024/10/portrait_standard_hp.jpg"
+                            alt="Hunter x Hunter">
+                        <div class="card-info">
+                            <div class="card-title">Hunter x Hunter</div>
+                            <div class="card-meta">400 فصل</div>
+                        </div>
+                        <div class="card-overlay">
+                            <div class="overlay-content">
+                                <div class="card-title">Hunter x Hunter</div>
+                                <div class="card-meta">غير مكتمل - مغامرة</div>
+                            </div>
+                        </div>
+                    </div>
+
 
                     <div class="manga-card" onclick="showMangaDetails('bleach')">
                         <img src="https://m.media-amazon.com/images/M/MV5BMjgyM2QzMjAtOGZjOS00OGFkLTkxZGYtMDJjZGM5MzIzYmM3XkEyXkFqcGc@._V1_.jpg"
@@ -268,9 +288,9 @@
             <div class="filter-section">
                 <div class="filter-row">
                     <div class="filter-group">
-                        <label>الجنس:</label>
+                        <label>الأنواع:</label>
                         <select id="genre-filter">
-                            <option value="">جميع الأجناس</option>
+                            <option value="">جميع الأنواع</option>
                             <option value="action">أكشن</option>
                             <option value="adventure">مغامرة</option>
                             <option value="comedy">كوميدي</option>
@@ -328,15 +348,33 @@
         </div>
     </div>
 
-    <footer class="site-footer">
-        <div class="container">
-            <div class="social-icons">
-                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-discord"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>عن الموقع</h3>
+                <p>منصة لقراءة المانجا والمانهوا<br> بجودة عالية وتجربة ممتعة.</p>
             </div>
-            <p>© 2025 مانجا بارسو. جميع الحقوق محفوظة.</p>
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="#">الرئيسية</a></li>
+                    <li><a href="#">التصنيفات</a></li>
+                    <li><a href="#">أحدث الإضافات</a></li>
+                    <li><a href="#">اتصل بنا</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>تابعنا</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 MangaParasso. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
 
